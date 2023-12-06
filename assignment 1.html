@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .subtract:hover{
+            background-color: blue;
+            border: none;
+        }
+        .subtract{
+            background-color: gold;
+            border: none;
+        }
+        input{
+            height: 80px;
+        }
+    </style>
+</head>
+<body style="background-color: black;">
+<h1 style="text-align: center;color: gold;font-size: 40px;font-weight: bold;"><em>Mini calculato</em>r</h1>
+
+    <div>
+        <div style="justify-content: center;display: flex;gap: 10px;">
+    <input type="number" placeholder="First Number" id="firstNumber" style="width: 20%;color: green;border: 1px solid black;font-size: 30px;font-weight: bold;">
+    <input type="number" placeholder="Second Number" id="secondNumber" style="width: 20%;color: green;border: 3px solid black;font-size: 30px;font-weight: bold;">
+</div><br><br><br>
+
+   
+<div id="revealResults" style="color: white;font-size: 40px;font-weight: bold;justify-content: center;display: flex;"></div>
+    <div style="justify-content: center;display: flex;gap: 10px;">
+    <button onclick="Subtract()" style="width: 6%;height: 10vh;" class="subtract">-</button>
+    
+
+    <button onclick="multiply()" style="width: 6%;height: 10vh;margin-top: 2%;" class="subtract">*</button>
+    
+
+    <button onclick="divide()" style="width: 6%;height: 10vh;" class="subtract">/</button>
+</div>
+    
+
+    <div id="displayResults" style="color: white;font-size: 40px;font-weight: bold;justify-content: center;display: flex;"></div>
+</div>
+    <br>
+    <div style="padding-top: 4%;display: block;">
+    <button onclick="areaTriangle()" style="width: 20%;height: 30%;padding: 1%;border: none;">Area of a triangle</button>
+    <br>
+
+
+
+    <button onclick="areaSquare()" style="width: 20%;height: 30%;padding: 1%;border: none;margin-left: 2%;">Area of a square</button><br>
+    
+    <button onclick="areaCircle()" style="width: 20%;height: 30%;padding: 1%;border: none;margin-left: 4%;">Area of a circle</button><br>
+
+    <button onclick="areaQuadrilateral()" style="width: 20%;height: 30%;padding: 1%;border: none;margin-left: 6%;">Area of a quadrilateral</button><br>
+
+    <button onclick="areaRhombus()" style="width: 20%;height: 30%;padding: 1%;border: none;margin-left: 8%;">Area of a rhombus</button><br>
+
+    <button onclick="areaTrapezium()" style="width: 20%;height: 30%; padding: 1%;border: none;margin-left: 10%;">Area of a trapezium</button><br>
+    
+    <button onclick="areaParallelogram()" style="width: 20%;height: 30%;padding: 1%;border: none;margin-left: 12%;">Area of a parallelogram</button><br>
+
+    <button onclick="BMI()"  style="width: 20%;height: 30%;padding: 1%;border: none;margin-left: 14%;">Body Mass Index</button>
+</div>
+
+
+    
+
+    
+
+
+
+
+
+    <script>
+         function divide() {
+            var firstNumber=(document.getElementById("firstNumber").value)
+            var secondNumber=(document.getElementById("secondNumber").value)
+            var answer=firstNumber/secondNumber
+            console.log(answer);
+            document.getElementById("revealResults").innerHTML=answer
+        } 
+        function Subtract() {
+            var firstNumber=(document.getElementById("firstNumber").value)
+            var secondNumber=(document.getElementById("secondNumber").value)
+            var answer=firstNumber-secondNumber
+            console.log(answer);
+            document.getElementById("revealResults").innerHTML=answer
+        }
+        function areaTriangle() {
+            var half=1/2
+            var base=prompt("Enter the base")
+            var height=prompt("Enter the height")
+            var answer=half*base*height
+            var convertedAnswer=(answer.toFixed(2))
+            console.log(convertedAnswer+("cm²"));
+            document.getElementById("displayResults").innerHTML=("The area of the triangle is " + convertedAnswer+("cm²"))
+        }
+        function areaSquare() {
+            var length=prompt("Enter the length")
+            var answer=length**2
+            console.log(answer+("cm²"));
+            document.getElementById("displayResults").innerHTML=("The area of the square is " + answer+("cm²"))
+        }
+
+        function areaCircle() {
+            var pi=22/7
+            var radius=prompt("Enter the radius")
+            var answer=pi*(radius**2)
+            var convertedAnswer=answer.toFixed(2)
+            console.log(convertedAnswer+"cm²")
+            document.getElementById("displayResults").innerHTML=("The area of the circle is " + convertedAnswer+("cm²"))
+        }
+        function areaQuadrilateral() {
+            var base=prompt("Enter the base")
+            var height=prompt("Enter the height")
+            var answer=base*height
+            var convertedAnswer=answer.toFixed(2)
+            console.log(convertedAnswer+"m²")
+            document.getElementById("displayResults").innerHTML=("The area of the quadrilateral is " + convertedAnswer+("cm²"))
+        }
+        function areaRhombus() {
+          var length=prompt("Enter the length") 
+          var height=prompt("Enter the height") 
+          var answer=length*height
+          var convertedAnswer=answer.toFixed(2)
+        console.log(convertedAnswer+"cm²")
+        document.getElementById("displayResults").innerHTML=("The area of the rhombus is " + convertedAnswer+("cm²"))
+        }
+        function areaTrapezium() {
+            var half=1/2
+            var a=Number(prompt("Enter a"))
+            var b=Number(prompt("Enter b"))
+            var height=prompt("Enter the height")
+            var answer=half*(a+b)*height
+            var convertedAnswer=answer.toFixed(2)
+        console.log(convertedAnswer+"cm²")
+        document.getElementById("displayResults").innerHTML=("The area of the trapezium is " + convertedAnswer+("cm²"))
+        }
+        function areaParallelogram() {
+            var length=prompt("Enter the length") 
+          var height=prompt("Enter the height") 
+          var answer=length*height
+          var convertedAnswer=answer.toFixed(2)
+        console.log(convertedAnswer+"cm²")  
+        document.getElementById("displayResults").innerHTML=("The area of the parallelogram is " + convertedAnswer+("cm²"))
+        }
+        function BMI() {
+            var weight=prompt("Enter the weight") 
+          var height=prompt("Enter the height") 
+          var answer=weight/(height**2)
+          var convertedAnswer=answer.toFixed(2)
+        console.log(convertedAnswer+"cm²")  
+        document.getElementById("displayResults").innerHTML=("The Body Mass Index is " + convertedAnswer+("kg/m²"))
+        }
+        function multiply() {
+            var firstNumber=(document.getElementById("firstNumber").value)
+            var secondNumber=(document.getElementById("secondNumber").value)
+            var answer=firstNumber*secondNumber
+            console.log(answer);
+            document.getElementById("revealResults").innerHTML=answer
+        } 
+    </script>
+</body>
+</html>

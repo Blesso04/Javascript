@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="areaCircle()">Area of a circle</button>
+    <div id="displayResults"></div>
+
+    <script>
+        function areaCircle() {
+            var pi=22/7
+            var radius=Number(prompt("Enter the radius"))
+            var answer=pi*(radius**2)
+            console.log(answer);
+            document.getElementById("displayResults").innerHTML=answer
+        }
+        
+    </script>
+</body>
+</html>
